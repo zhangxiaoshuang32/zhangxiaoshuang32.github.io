@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>echartsHomework</title>
+    <script src="libs/echarts.min.js"></script>
+</head>
+<body>
+
+    <div id="homework" style="width: 1000px;height: 600px;"></div>
+
+    <script>
+
+
+        var homework = echarts.init(document.getElementById('homework'));
+
+        var option={
+            backgroundColor: '#ccc',
+            title:{
+                text:'书籍价格',
+                subtext:'the price of some books',
+
+            },
+            tooltip:{
+                trigger: 'axis',
+                axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                    type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                }
+            },
+            xAxis:{
+                data:["数据结构","Webgl入门教程","JavaScript高级程序设计","编程之美"],
+            },
+            yAxis:{},
+            series:[{
+               name:'书籍价格',
+                type:'bar',
+                data:[40,58,105,89]
+            },
+                {
+                    type:'line',
+                    data:[40,58,105,89]
+                }]
+        };
+
+        homework.setOption(option);
+
+
+    </script>
+</body>
+</html>
